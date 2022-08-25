@@ -1,0 +1,107 @@
+<h3 class="headingStyle centre">Retrospective</h3>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm" class="headingStyle">
+      What went well
+      <button
+        style="margin-left: 150px; margin-bottom:10px"
+        (click)="addNewCard('whatWentWellcards')"
+      >
+        Add
+      </button>
+      <div *ngFor="let item of whatWentWellcards">
+        <form>
+          <span *ngIf="!item.editable">{{ item.description }}</span>
+          <textarea
+            *ngIf="item.editable"
+            rows="5"
+            [(ngModel)]="item.description"
+            class="custome-textarea width forScrollBar"
+            name="item.description"
+            maxlength="300"
+            (keydown.enter)="onSave(item, 'whatWentWellcards')"
+          >
+          </textarea>
+        </form>
+      </div>
+    </div>
+
+    <div class="col-sm" class="headingStyle">
+      What can be improved
+      <button
+        style="margin-left: 105px; margin-bottom:10px"
+        (click)="addNewCard('whatCanBeImproved')"
+      >
+        Add
+      </button>
+      <div *ngFor="let item of whatCanBeImproved">
+        <form>
+          <span *ngIf="!item.editable">{{ item.description }}</span>
+          <textarea
+            *ngIf="item.editable"
+            rows="5"
+            [(ngModel)]="item.description"
+            class="custome-textarea width forScrollBar"
+            name="item.description"
+            maxlength="300"
+            (keydown.enter)="onSave(item, 'whatCanBeImproved')"
+          >
+          </textarea>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm" class="headingStyle">
+      Start Donig
+      <button
+        style="margin-left: 172px; margin-bottom:10px"
+        (click)="addNewCard('startDoing')"
+      >
+        Add
+      </button>
+      <div *ngFor="let item of startDoing">
+        <form>
+          <span *ngIf="!item.editable">{{ item.description }}</span>
+          <textarea
+            *ngIf="item.editable"
+            rows="5"
+            [(ngModel)]="item.description"
+            class="custome-textarea width forScrollBar"
+            name="item.description"
+            maxlength="300"
+            (keydown.enter)="onSave(item, 'startDoing')"
+          >
+          </textarea>
+        </form>
+      </div>
+    </div>
+
+    <div class="col-sm" class="headingStyle">
+      Action Items
+      <button
+        style="margin-left: 167px; margin-bottom:10px"
+        (click)="addNewCard('actionItems')"
+      >
+        Add
+      </button>
+      <div *ngFor="let item of actionItems">
+        <form>
+          <span *ngIf="!item.editable">{{ item.description }}</span>
+          <textarea
+            *ngIf="item.editable"
+            rows="5"
+            [(ngModel)]="item.description"
+            class="custome-textarea width forScrollBar"
+            name="item.description"
+            maxlength="300"
+            (keydown.enter)="onSave(item, 'actionItems')"
+          >
+          </textarea>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
